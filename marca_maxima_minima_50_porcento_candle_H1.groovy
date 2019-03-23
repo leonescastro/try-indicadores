@@ -61,15 +61,17 @@ for ( def i = size-1; i > 0; i-- ) {
             linhaMeioH1.addDated(data, (((maximaDia-minimaDia)*0.5)+ minimaDia).toDouble());
             linhaMaximaH1.addDated(data, maximaDia);
         }
-        linhaMinimaH1.setLabel("H1[F]="+idxIniDia);
-        linhaMeioH1.setLabel("H1[M]="+idxFimDia);
-        linhaMaximaH1.setLabel("H1[T]=" + diaAtualAux + ' <> ' + diaAtual);
+        numDias++;
+
+        linhaMinimaH1.setLabel("H1[F" + numDias +  "]");
+        linhaMeioH1.setLabel("H1[M" + numDias +  "]");
+        linhaMaximaH1.setLabel("H1[T" + numDias +  "]");
         
         r.add(linhaMinimaH1);
         r.add(linhaMeioH1);
         r.add(linhaMaximaH1);       
         
-        numDias++;
+        
         if(numDias > NUMERO_DIAS-1) {
             break;
         }
