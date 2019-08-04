@@ -1,5 +1,6 @@
 
 int NUMERO_CANDLES=2;
+int PONTOS_PAVIO=80;
 
 
 r = newLines();
@@ -48,25 +49,25 @@ for ( def i = size-1; i > 0; i-- ) {
         }
         
     } else { 
-        def linhaMinimaH1 = newLineData();
-        def linhaMeioH1 = newLineData();
-        def linhaMaximaH1 = newLineData();
+        def linhaMinimaM5 = newLineData();
+        def linhaMeioM5 = newLineData();
+        def linhaMaximaM5 = newLineData();
         
         for ( def j = idxIniM5; ( j <= idxFimM5 ); j++ ) {
             def data = low.date(j);
-            linhaMinimaH1.addDated(data, minimaM5);
-            linhaMeioH1.addDated(data, (((maximaM5-minimaM5)*0.5)+ minimaM5).toDouble());
-            linhaMaximaH1.addDated(data, maximaM5);
+            linhaMinimaM5.addDated(data, minimaM5);
+            linhaMeioM5.addDated(data, (((maximaM5-minimaM5)*0.5)+ minimaM5).toDouble());
+            linhaMaximaM5.addDated(data, maximaM5);
         }
         numCandles++;
 
-        linhaMinimaH1.setLabel("M5[F" + numCandles +  "]");
-        linhaMeioH1.setLabel("M5[M" + numCandles +  "]");
-        linhaMaximaH1.setLabel("M5[T" + numCandles +  "]");
+        linhaMinimaM5.setLabel("M5[F" + numCandles +  "]");
+        linhaMeioM5.setLabel("M5[M" + numCandles +  "]");
+        linhaMaximaM5.setLabel("M5[T" + numCandles +  "]");
         
-        r.add(linhaMinimaH1);
-        r.add(linhaMeioH1);
-        r.add(linhaMaximaH1);       
+        r.add(linhaMinimaM5);
+        r.add(linhaMeioM5);
+        r.add(linhaMaximaM5);       
         
         if(numCandles > NUMERO_CANDLES-1) {
             break;
